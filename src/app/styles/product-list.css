@@ -1,12 +1,15 @@
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
   
-@media (max-width: 600px) {
-    .product-list {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}  
+.product-item {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
