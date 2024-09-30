@@ -1,39 +1,48 @@
+// Import images from the assets folder
+import tShirtImage from '../../assets/images/tshirt.png';
+import jeansImage from '../../assets/images/jeans.png';
+import jacketImage from '../../assets/images/jacket.png';
+import sneakersImage from '../../assets/images/sneakers.png';
+import windbreakerImage from '../../assets/images/windbreaker.png';
+import socksImage from '../../assets/images/socks.png';
+
 const products = [
-    {
-      id: 1,
-      name: 'T-shirt',
-      price: 19.99,
-      image: 'https://www.freeiconspng.com/uploads/t-shirt-png-15.png',
-    },
-    {
-      id: 2,
-      name: 'Jeans',
-      price: 49.99,
-      image: 'https://www.freeiconspng.com/uploads/jeans-png-26.png',
-    },
-    {
-      id: 3,
-      name: 'Jacket',
-      price: 89.99,
-      image: 'https://www.freeiconspng.com/uploads/jacket-png-21.png',
-    },
-    {
-      id: 4,
-      name: 'Sneakers',
-      price: 59.99,
-      image: 'https://www.freeiconspng.com/uploads/sneakers-png-22.png',
-    },
-    {
-      id: 5,
-      name: 'Cap',
-      price: 14.99,
-      image: 'https://www.freeiconspng.com/uploads/cap-png-13.png',
-    },
-    {
-      id: 6,
-      name: 'Socks',
-      price: 7.99,
-      image: 'https://www.freeiconspng.com/uploads/socks-png-18.png',
-    }
+  {
+    id: 1,
+    name: 'T-shirt',
+    price: 19.99,
+    image: tShirtImage,
+  },
+  {
+    id: 2,
+    name: 'Jeans',
+    price: 49.99,
+    image: jeansImage,
+  },
+  {
+    id: 3,
+    name: 'Jacket',
+    price: 89.99,
+    image: jacketImage,
+  },
+  {
+    id: 4,
+    name: 'Sneakers',
+    price: 59.99,
+    image: sneakersImage,
+  },
+  {
+    id: 5,
+    name: 'Windbreaker',
+    price: 129.99,
+    image: windbreakerImage,
+  },
+  {
+    id: 6,
+    name: 'Socks',
+    price: 7.99,
+    image: socksImage,
+  }
 ];
-export default products;  
+
+export default products;
