@@ -1,8 +1,10 @@
 import express from 'express';
-import messageRouter from './src/routers/message-router.js';
+import ProductRouter from './src/controllers/product-controller.js'
 
-const app = express()
+const app = express();
+const port = 3000;
+
 app.use(express.json())
-app.use(messageRouter)
+app.use('/api/products', ProductRouter);
 
-app.listen(3000, () => console.log('Server Ready'))
+app.listen(3000, () => console.log(`Server listening on port ${port}`));

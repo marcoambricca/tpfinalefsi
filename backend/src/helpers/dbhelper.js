@@ -1,6 +1,6 @@
 import pkg from 'pg';
 const { Pool } = pkg;
-import { supabaseConfig } from '../config/config.js';
+import { supabaseConfig } from '../config/dbconfig.js';
 
 export default class PgHelper {
     constructor() {
