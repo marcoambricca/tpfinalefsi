@@ -1,15 +1,38 @@
-import PgHelper from "../helpers/dbhelper.js";
+import config from "../config/dbconfig.js";
+import pkg from 'pg';
+const { Client } = pkg;
 
 export default class CommonRepository{
-    getAllAsync = async (table_name) => {
-        const dbhelper = new PgHelper();
-        const returnObject = await dbhelper.sqlQuery(`SELECT * FROM ${table_name}`);
-        return returnObject;
+    getAllSync = async (table_name) => {
+        let returnArray = null;
+        const client = new Client(config);
+        try {
+            await client.connect();
+            const sql = `SELECT * FROM ${table_name}`;
+            const result = await client.query(sql);
+            await client.end();
+            returnArray = result.rows;
+        }
+        catch (error){
+            console.log(error);
+        }
+        return returnArray;
     }
 
-    getByIdAsync = async (table_name, id) => {
-        const dbhelper = new PgHelper();
-        const returnObject = await dbhelper.sqlQuery(`SELECT * FROM ${table_name} WHERE id = ${id}`);
+    getByIdSync = async (table_name, id) => {
+        let returnObject = null;
+        const client = new Client(DBConfig);
+        try {
+            await client.connect();
+            const sql = `SELECT * FROM ${table_name} WHERE id = $1`;
+            const values = [id];
+            const result = await client.query(sql, values);
+            await client.end();
+            returnObject = result.rows[0];
+        }
+        catch (error){
+            console.log(error);
+        }
         return returnObject;
     }
 }

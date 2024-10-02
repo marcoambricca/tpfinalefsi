@@ -1,7 +1,9 @@
-export const supabaseConfig = {
-    user: 'postgres.hrwmzerqmkbztcyyfvwp',
-    host: 'aws-0-sa-east-1.pooler.supabase.com:6543/postgres',
-    database: 'postgres',
-    password: 'tpfinalefsi123',
+export const config = {
+    host: 'localhost',
+    database: 'tpfinalefsi',
+    user: 'postgres',
+    password: 'root',
     port: 5432
 }
+
+export default config;

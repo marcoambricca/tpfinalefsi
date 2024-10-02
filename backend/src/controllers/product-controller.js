@@ -6,7 +6,7 @@ const svcC = new CommonService();
 
 router.get('', async (req, res) => {
   let response;
-  const returnObject = await svcC.getAllAsync('Products');
+  const returnObject = await svcC.getAllSync('Products');
   if (response){
     response = res.status(200).json(returnObject)
   }
