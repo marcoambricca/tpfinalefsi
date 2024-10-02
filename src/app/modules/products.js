@@ -10,36 +10,42 @@ const products = [
   {
     id: 1,
     name: 'T-shirt',
+    type: 'Shirts',
     price: 19.99,
     image: tShirtImage,
   },
   {
     id: 2,
     name: 'Jeans',
+    type: 'Pants',
     price: 49.99,
     image: jeansImage,
   },
   {
     id: 3,
     name: 'Jacket',
+    type: 'Jackets',
     price: 89.99,
     image: jacketImage,
   },
   {
     id: 4,
     name: 'Sneakers',
+    type: 'Shoes',
     price: 59.99,
     image: sneakersImage,
   },
   {
     id: 5,
     name: 'Windbreaker',
+    type: 'Jackets',
     price: 129.99,
     image: windbreakerImage,
   },
   {
     id: 6,
-    name: 'Socks',
+    name: '4-pack socks',
+    type: 'Socks',
     price: 7.99,
     image: socksImage,
   }
