@@ -1,3 +1,9 @@
+.contact{
+    width: 400px;
+    background-color: gray;
+    padding: 10px;
+}
+
 .contact-form{
     display: flex;
     flex-direction: column;

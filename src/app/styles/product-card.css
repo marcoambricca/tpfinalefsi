@@ -6,6 +6,8 @@
   padding: 20px;
   border: none;
   background-color: white;
+  text-decoration: none;
+  text-transform: none;
 }
 
 .product-details{

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link';
 import '../styles/navigation.css'
 
 export default function NavigationComponent(){
@@ -21,7 +22,7 @@ export default function NavigationComponent(){
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
-                    <a href="#contact">Contact</a>
+                    <Link href={'/contact'}></Link>
                 </div>
             </div>
             <div className="middle-section">
