@@ -1,4 +1,3 @@
-// Import images from the assets folder
 import tShirtImage from '../../assets/images/tshirt.png';
 import jeansImage from '../../assets/images/jeans.png';
 import jacketImage from '../../assets/images/jacket.png';
@@ -6,7 +5,7 @@ import sneakersImage from '../../assets/images/sneakers.png';
 import windbreakerImage from '../../assets/images/windbreaker.png';
 import socksImage from '../../assets/images/socks.png';
 
-const products = [
+const Products = [
   {
     id: 1,
     name: 'T-shirt',
@@ -51,4 +50,4 @@ const products = [
   }
 ];
 
-export default products;
+export default Products;
