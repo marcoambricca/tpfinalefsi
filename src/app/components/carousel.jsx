@@ -21,7 +21,7 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="carousel-container">
+    <div id='carousel' className="carousel-container">
       <div
         className="carousel"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}

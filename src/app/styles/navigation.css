@@ -4,30 +4,35 @@ body {
 }
 
 .header {
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e8f5f5;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
 }
 
-.left-section {
-    display: flex;
-    align-items: center;
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
 }
 
-.middle-section {
-    flex-grow: 1; /* Center this section */
-    text-align: center;
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
 }
 
-.right-section {
-    display: flex;
-    align-items: center;
+.middle-section h1 {
+  color: white;
+}
+
+.right-section span {
+  color: white;
 }
 
 .navbar {
@@ -35,12 +40,12 @@ body {
     width: 250px;
     position: fixed;
     top: 0;
-    left: -250px; /* Hide off-screen */
+    left: -250px;
     background-color: #333;
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
-    z-index: 999; /* Ensure it overlays other content */
+    z-index: 999;
 }
 
 .navbar a {
