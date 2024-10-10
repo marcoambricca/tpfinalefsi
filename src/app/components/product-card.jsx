@@ -6,17 +6,18 @@ const ProductCard = ({ product }) => {
     <div className="product-card">
       <div className="product-image-wrapper">
         <Image 
-          src={product.image} 
-          alt={product.name} 
+          src={product.images[0]} 
+          alt={product.title} 
           className="product-image" 
           width={300} 
           height={300} 
           objectFit="contain"
+          unoptimized
         />
       </div>
       <div className="product-details">
-        <h3 className="product-name">{product.name}</h3>
-        <p className="product-price">${product.price.toFixed(2)} USD</p>
+        <h3 className="product-name">{product.title}</h3>
+        <p className="product-price">${product.price} USD</p>
       </div>
     </div>
   );

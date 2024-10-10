@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import ProductCard from './product-card.jsx';
 import SearchBar from './searchbar.jsx';
@@ -7,14 +7,14 @@ import { useState } from 'react';
 import '../styles/product-list.css';
 import '../styles/dropdown.css';
 
-export default function ProductList({ products }){
+export default function ProductList({ products, categories }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const filteredProducts = products.filter((product) => {
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesType = selectedType ? product.type.toLowerCase() === selectedType.toLowerCase() : true;
+    const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesType = selectedType ? product.category.toLowerCase() === selectedType.toLowerCase() : true;
     return matchesSearch && matchesType;
   });
 
@@ -35,10 +35,11 @@ export default function ProductList({ products }){
         {dropdownOpen && (
           <ul className="dropdown-menu">
             <li onClick={() => handleTypeSelect('')}>Clear filters</li>
-            <li onClick={() => handleTypeSelect('Socks')}>Socks</li>
-            <li onClick={() => handleTypeSelect('Jackets')}>Jackets</li>
-            <li onClick={() => handleTypeSelect('Shirts')}>Shirts</li>
-            <li onClick={() => handleTypeSelect('Pants')}>Pants</li>
+            {categories.map((category) => (
+              <li key={category} onClick={() => handleTypeSelect(category)}>
+                {category}
+              </li>
+            ))}
           </ul>
         )}
       </div>
@@ -58,4 +59,4 @@ export default function ProductList({ products }){
       </div>
     </div>
   );
-};
+}

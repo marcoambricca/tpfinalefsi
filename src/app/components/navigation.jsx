@@ -46,7 +46,7 @@ export default function NavigationComponent() {
           </div>
         </div>
         <div className="middle-section">
-          <h1>Clothing</h1>
+          <h1>Productos</h1>
         </div>
         <div className="right-section">
           <span>User</span>

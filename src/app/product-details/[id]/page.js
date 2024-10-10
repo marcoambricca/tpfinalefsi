@@ -1,29 +1,58 @@
-'use client'
+'use client';
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Products from '../../modules/products.js';
 import '../../styles/product-detail.css';
 
 export default function Page({ params }) {
-    const [product, setProduct] = useState({});
-    useEffect(() => {
-        const search = Products.find(p => p.id === parseInt(params.id));
-        setProduct(search);
-    }, [])
+    const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    if (!product){
-        return(
-            <div>Product not found</div>
-        )
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                const response = await fetch(`https://dummyjson.com/products/${params.id}`);
+                const productData = await response.json();
+                setProduct(productData);
+            } catch (error) {
+                console.error('Error fetching product:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProduct();
+    }, [params.id]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!product) {
+        return <div>Product not found</div>;
     }
 
     return (
         <div className="product-container">
-            <Image src={product.image} className="product-image"/>
+            <Image 
+                src={product.images[0]}
+                alt={product.title} 
+                className="product-image" 
+                width={300} 
+                height={300} 
+                objectFit="contain" 
+            />
             <div className="product-detail">
-                <h1>{product.name}</h1>
-                <p>Price: ${product.price}</p>
+                <h1>{product.title}</h1>
+                <p><strong>Price:</strong> ${product.price} USD</p>
+                <p><strong>Description:</strong> {product.description}</p>
+                <p><strong>Brand:</strong> {product.brand}</p>
+                <p>
+                    <strong>Dimensions:</strong> 
+                    {product.dimensions.width} x {product.dimensions.height} x {product.dimensions.depth} cm
+                </p>
+                <p><strong>Warranty Information:</strong> {product.warrantyInformation}</p>
+                <p><strong>Shipping Information:</strong> {product.shippingInformation}</p>
             </div>
         </div>
     );
