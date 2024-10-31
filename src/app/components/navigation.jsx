@@ -1,9 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import { useCart } from '../../context/cartContext.js';
 import '../styles/navigation.css';
 
 export default function NavigationComponent() {
+  const { cart } = useCart();
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
   const toggleNavbar = () => {
     const navbar = document.getElementById('navbar');
     if (navbar.style.left === '0px') {
@@ -31,7 +36,9 @@ export default function NavigationComponent() {
         </Link>
       </div>
       <div className="right-section">
-        <span>User</span>
+      <Link href="/cart-details">
+        <div className="cart-icon"> 🛒 {totalItems}</div>
+        </Link>
       </div>
     </div>
   );
