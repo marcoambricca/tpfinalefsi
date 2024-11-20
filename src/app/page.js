@@ -1,4 +1,5 @@
 'use client';
+// HOLA BUTI HOLA MARCO LOS AMOOOOOOOOO 
 
 import ProductList from "./components/product-list.jsx";
 import NavigationComponent from "./components/navigation.jsx";
